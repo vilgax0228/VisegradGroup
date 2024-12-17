@@ -83,12 +83,30 @@ barplot(table(df$Setor),
 ![Rplot09](https://github.com/user-attachments/assets/6f24039a-539b-41ff-9153-f7d08f198329)
 
 
+Clustering techniques offer the advantage of simultaneously considering several attributes, while methods based on dispersion can only take into account each single attribute separately.
+
+```R
+x1 = table(df_clean$X1)
+indicador1 = as.data.frame(x1)
+indicador1_b <- indicador1[indicador1$Freq != 0, ]
+indicador1_b
+
+indicador1_n = as.numeric(as.character(indicador1_n[,1] + [,2]))
+indicador1_n = as.numeric(as.character(indicador1[,2]))
+
+indicador1_new <- indicador1_new[!is.na(indicador1_new)]
+indicador1_b <- indicador1_b[order(indicador1_b$Var1), ]
 
 
+ggplot(indicador1_b, aes(x = Var1, y = Freq, fill = Var1)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Indicador 1", y = "Frequência", title = "Distribuição Indicador 1") +
+  theme_minimal()
+```
 
+![Rplot10](https://github.com/user-attachments/assets/4d138323-eddb-43ad-bdac-ce818d234d35)
 
-
-
+Pela distribuição do indicador 1, é razoável propor que os valores faltantes sejam substituídos pela moda, que, aqui, é o 0 (zero).
 
 
 
